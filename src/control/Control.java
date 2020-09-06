@@ -10,7 +10,7 @@ package control;
 public class Control {
 
     public Control() {
-        System.out.println("holi");
+        System.out.println("holi owo");
     }
     
 }
