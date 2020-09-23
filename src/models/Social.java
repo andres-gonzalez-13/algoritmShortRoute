@@ -31,13 +31,13 @@ public class Social extends Graph{
 	 * @param idFriend2
 	 * @return una lista de personas sociales
 	 */
-	public SimpleList<PersonSocial> commonFriends(int idFriend1, int idFriend2,Comparator<Vertex> comparator){
+	public SimpleList<PersonSocial> commonFriends(int idFriend1, int idFriend2){
 		SimpleList<PersonSocial> commonFriends = new SimpleList<PersonSocial>();
 		
-		if(isExist(new Vertex(new PersonSocial(idFriend1, ""),comparator)) == true && isExist(new Vertex(new PersonSocial(idFriend2, ""),comparator)) && idFriend1 != idFriend2){
-		Cursor<Vertex> cursorFriend1 = new Cursor<Vertex>(this.search(this.getComparator(), new Vertex(new PersonSocial(idFriend1, ""),comparator)));
+		if(isExist(new Vertex(new PersonSocial(idFriend1, ""))) == true && isExist(new Vertex(new PersonSocial(idFriend2, ""))) && idFriend1 != idFriend2){
+		Cursor<Vertex> cursorFriend1 = new Cursor<Vertex>(this.search(this.getComparator(), new Vertex(new PersonSocial(idFriend1, ""))));
 		while (!cursorFriend1.isOut()) {
-			Cursor<Vertex> cursorFriend2 = new Cursor<Vertex>(this.search(this.getComparator(), new Vertex(new PersonSocial(idFriend2, ""),comparator)));
+			Cursor<Vertex> cursorFriend2 = new Cursor<Vertex>(this.search(this.getComparator(), new Vertex(new PersonSocial(idFriend2, ""))));
 			while (!cursorFriend2.isOut()) {
 				if(cursorFriend1.info().getPersonSocial().getId() == cursorFriend2.info().getPersonSocial().getId()) {
 					commonFriends.add(cursorFriend1.info().getPersonSocial());
@@ -105,22 +105,46 @@ public class Social extends Graph{
 		}
 		return personSocialAlone;
 	}
-	
+
 	/**
-	 * 
+	 * Este metodo retorna la persona que mas amigos tenga en el grafo
 	 * @return
 	 */
-	public SimpleList<Vertex> getListPersonMaxFriends() {
-		SimpleList<Vertex> list = new SimpleList<Vertex>();
+	public PersonSocial getMaxFriends() {
+		Vertex vertex = null;
+		int current = 0;
+		if(this.size() > 0 ) {
 		Cursor<Vertex> cursor = new Cursor<Vertex>(this);
 		while (!cursor.isOut()) {
-			cursor.info().getPersonSocial().setId(cursor.info().size());
-			list.add(cursor.info());
+			
+			if (cursor.info().size() > current) {
+				current = cursor.info().size();
+				vertex = cursor.info();
+			}
 			cursor.next();
-		}
-		return list;
+		 }
+	  }
+		return vertex.getPersonSocial();
 	}
 	
+	
+	
+	public boolean deletePersonSocial(int idDelete) {
+		Boolean isDelete = false;
+		Vertex vertex = new Vertex(new PersonSocial(idDelete, ""));
+		if (this.isExist(vertex)) {
+			vertex = this.getElement(new Vertex(new PersonSocial(idDelete,"")));
+			Cursor<Vertex> cursor = new Cursor<Vertex>(vertex);
+			while (!cursor.isOut()) {
+				cursor.getInfoAndNext().eliminateNode(this.getComparator(), vertex);
+				isDelete = true;
+			}
+			
+			this.eliminateNode(vertex);
+		}
+		return isDelete;
+	}
+
 	
 }
 

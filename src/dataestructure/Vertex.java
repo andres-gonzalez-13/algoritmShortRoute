@@ -12,6 +12,10 @@ public class Vertex extends SimpleList<Vertex>{
 		super(comparator);
 		this.personSocial = personSocial;
 	}
+	
+	public Vertex(PersonSocial personSocial) {
+		this.personSocial = personSocial;
+	}
 
 	public PersonSocial getPersonSocial() {
 		return personSocial;
@@ -19,6 +23,10 @@ public class Vertex extends SimpleList<Vertex>{
 
 	public void setPersonSocial(PersonSocial personSocial) {
 		this.personSocial = personSocial;
+	}
+	
+	public int gradeVertex() {
+		return this.size();
 	}
 
 }
