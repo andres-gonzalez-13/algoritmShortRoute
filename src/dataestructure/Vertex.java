@@ -1,12 +1,15 @@
 package dataestructure;
 
+import java.util.Comparator;
+
 import models.PersonSocial;
 
 public class Vertex extends SimpleList<Vertex>{
 	
 	private PersonSocial personSocial;
 	
-	public Vertex(PersonSocial personSocial) {
+	public Vertex(PersonSocial personSocial,Comparator<Vertex> comparator) {
+		super(comparator);
 		this.personSocial = personSocial;
 	}
 

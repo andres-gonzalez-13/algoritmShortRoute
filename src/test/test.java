@@ -29,7 +29,7 @@ public class test {
 		};
 		
 		
-		Graph graph = new Graph(comparator);
+		/*Graph graph = new Graph(comparator);
 		graph.add(new Vertex(personSocial));
 		graph.add(new Vertex(personSocial1));
 		graph.add(new Vertex(personSocial2));
@@ -50,7 +50,7 @@ public class test {
 		Cursor<Vertex> cursor = new Cursor<Vertex>(search);
 		while (!cursor.isOut()) {
 			System.out.println("friend: " + cursor.getInfoAndNext().getPersonSocial());
-		}
+		}*/
 	}
 
 }

@@ -31,9 +31,11 @@ public Graph(Comparator<Vertex> comparator) {
 		
 		
 		if(vertexDestiny != null && vertexOrigin != null) {
-			vertexDestiny.add(vertexOrigin);
-			vertexOrigin.add(vertexDestiny);
-			flag = true;
+				if (!vertexOrigin.isExist(vertexDestiny)) {
+					vertexDestiny.add(vertexOrigin);
+					vertexOrigin.add(vertexDestiny);
+					flag = true;
+			}
 		}
 		return flag;
 	} 
