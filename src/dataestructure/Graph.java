@@ -22,7 +22,6 @@ public Graph(Comparator<Vertex> comparator) {
 		while (!cursor.isOut()) {
 			
 			if(cursor.info().getPersonSocial().getId() == origin) {
-				System.out.println("entro");
 				vertexOrigin = cursor.info();
 			}else if(cursor.info().getPersonSocial().getId() == destiny) {
 				vertexDestiny = cursor.info();
