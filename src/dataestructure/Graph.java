@@ -18,6 +18,7 @@ public Graph(Comparator<Vertex> comparator) {
 		Vertex vertexDestiny = null;
 		Boolean flag = false;
 		Cursor<Vertex> cursor = new Cursor<Vertex>(this);
+		
 		while (!cursor.isOut()) {
 			
 			if(cursor.info().getPersonSocial().getId() == origin) {
@@ -29,8 +30,6 @@ public Graph(Comparator<Vertex> comparator) {
 			cursor.getInfoAndNext();
 		}
 		
-		//System.out.println("origin: " + vertexOrigin.getPersonSocial());
-		//System.out.println("destiny: " + vertexDestiny.getPersonSocial());
 		
 		if(vertexDestiny != null && vertexOrigin != null) {
 			vertexDestiny.add(vertexOrigin);
