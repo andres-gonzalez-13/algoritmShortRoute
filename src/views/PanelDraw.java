@@ -52,22 +52,24 @@ public class PanelDraw extends JPanel{
             int radio = 100;
             float angulo = 360/10;
             angulo = (float) Math.toRadians(angulo);
-            for(int i=indice;i<vgrafos.size();i++){
-                int xv=(int)(x+radio*Math.cos(i * angulo));
-                int yv=(int) (y- radio * Math.sin(i * angulo));
+            for(int i = indice;i < vgrafos.size();i++){
+                int xv = (int)(x + radio*Math.cos(i * angulo));
+                int yv = (int) (y - radio * Math.sin(i * angulo));
                 xvs.add(xv);
                 yvs.add(yv);
                 indice++;
             }
         }
-        for(int i=0;i<vgrafos.size();i++){
-            for(int j=0;j<vgrafos.size();j++){
-                
-                //vgrafos.get(i).
-                
+        System.out.println("grafos a dibujar: " + vgrafos.size());
+        for(int i = 0;i < vgrafos.size();i++){
+            for(int j = 0;j < vgrafos.size();j++){
                 g.setStroke(new BasicStroke(2));
                 g.setColor(Color.BLACK);
-                g.drawLine(xvs.get(i)+15,yvs.get(i)+15,xvs.get(j)+15,yvs.get(j)+15);
+                
+                if(vgrafos.get(i).isExist(vgrafos.get(j))){
+                    g.drawLine(xvs.get(i)+15,yvs.get(i)+15,xvs.get(j)+15,yvs.get(j)+15);
+                }
+                    
                 g.setColor(Color.WHITE);
                 g.fillOval(xvs.get(i), yvs.get(i), ancho, alto);
                 g.setColor(Color.BLACK);

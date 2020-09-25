@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 import dataestructure.Cursor;
 import dataestructure.Graph;
+import dataestructure.NodeList;
 import dataestructure.Vertex;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -24,15 +25,13 @@ public class test {
 		PersonSocial personSocial5 = new PersonSocial(6,"lila");
 		
 		
-		Comparator<Vertex> comparator = new Comparator<Vertex>() {
-			
+		Comparator<Vertex> comparator = new Comparator<Vertex>() {			
 			@Override
 			public int compare(Vertex o1, Vertex o2) {
 				// TODO Auto-generated method stub
 				return (o1.getPersonSocial().getId() - o2.getPersonSocial().getId() == 0)?0:1 ;
 			}
-		};
-		
+		};		
 		
 		Graph graph = new Graph(comparator);
 		graph.add(new Vertex(personSocial));
@@ -43,26 +42,36 @@ public class test {
 		graph.add(new Vertex(personSocial5));
 		
 		graph.show();
+                graph.setComparator(comparator);
 		
 		//Aqui se agregan amigos teniendo en cuenta el id de amigo
-		Boolean isInsert = graph.addConn(1, 5);
-		Boolean isInsert2 = graph.addConn(2, 5);
+		Boolean isInsert = graph.addConn(1, 2);
+                //esta conexion da nullpointer
+		//Boolean isInsert2 = graph.addConn(2, 5);
 		Boolean isInsert3 = graph.addConn(3, 5);
                 Boolean isInsert4 = graph.addConn(4, 5);
                 Boolean isInsert5 = graph.addConn(5, 5);
                 
-		//System.out.println("inserto?: " + isInsert2);
+		System.out.println("inserto?: " + isInsert4);
 		
 		Vertex search = graph.search(comparator, new Vertex(new PersonSocial(5, "")));
 //		System.out.println("vertex: " + search.getPersonSocial().getNickName());
 		Cursor<Vertex> cursor = new Cursor<Vertex>(search);
                 
-                Vector<Vertex> ver = new Vector();
-		while (!cursor.isOut()) {
-                    ver.add(cursor.getInfoAndNext());
-		}
-
+                Vector<Vertex> vertexToShow = new Vector();
+//		while (!cursor.isOut()) {
+//                    Vertex vertexToAdd = cursor.getInfoAndNext();
+//                    vertexToAdd.setComparator(comparator);
+//                    ver.add(vertexToAdd);
+//		}
                 
+                NodeList<Vertex> aux = graph.getHead();
+                while (aux.getNext() != null) {
+                    aux.getInfo().setComparator(comparator);
+                    vertexToShow.add(aux.getInfo());
+                    
+                    aux = aux.getNext();
+                }
                 
                 JFrame frame = new JFrame();
                     frame.setSize(new Dimension(400, 400));
@@ -72,7 +81,7 @@ public class test {
                     
                     frame.add(grapher, BorderLayout.CENTER);
                     
-                    grapher.getPd().setVgrafos(ver);
+                    grapher.getPd().setVgrafos(vertexToShow);
                 frame.setVisible(true);
 	}
 

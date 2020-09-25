@@ -133,7 +133,6 @@ public class SimpleList<E> {
 		for (int i = 0; i < list.size(); i++) {
 			eliminateNode(comparator, info);
 		}
-
 	}
 
 	public void eliminateNode(Comparator<E> comparator, E data) {
@@ -200,11 +199,11 @@ public class SimpleList<E> {
 		NodeList<E> aux = head;
 		boolean flag = false;
 		while (aux != null) {
-			if (this.comparator.compare(aux.info, ref) == 0 && !flag) {
-				flag = true;
-				return true;
-			}
-			aux = aux.next;
+                    if (this.comparator.compare(aux.info, ref) == 0 && !flag) {
+                            flag = true;
+                            return true;
+                    }
+                    aux = aux.next;
 		}
 		return false;
 	}
@@ -233,4 +232,8 @@ public class SimpleList<E> {
 	public Comparator<E> getComparator(){
 		return this.comparator;
 	}
+        
+        public void setComparator(Comparator compa){
+            comparator = compa;
+        }
 }

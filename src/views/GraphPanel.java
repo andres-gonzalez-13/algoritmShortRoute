@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 public class GraphPanel extends JPanel{
     
     private PanelDraw pd;
-    int max=0;
+    int max = 0;
     private JTextField valor;
  
     public void init(ActionListener action){
@@ -31,9 +31,9 @@ public class GraphPanel extends JPanel{
         agregar.addActionListener(action);
 
         valor=new JTextField(5);
-        pdatos.add(new JLabel("Valor Vertice" +""));
-        pdatos.add(valor);
-        pdatos.add(agregar);
+//        pdatos.add(new JLabel("Valor Vertice" +""));
+//        pdatos.add(valor);
+//        pdatos.add(agregar);
         add(pdatos,BorderLayout.SOUTH);
     }
 
