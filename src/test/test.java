@@ -5,7 +5,12 @@ import java.util.Comparator;
 import dataestructure.Cursor;
 import dataestructure.Graph;
 import dataestructure.Vertex;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.util.Vector;
+import javax.swing.JFrame;
 import models.PersonSocial;
+import views.GraphPanel;
 
 public class test {
 	
@@ -29,7 +34,7 @@ public class test {
 		};
 		
 		
-		/*Graph graph = new Graph(comparator);
+		Graph graph = new Graph(comparator);
 		graph.add(new Vertex(personSocial));
 		graph.add(new Vertex(personSocial1));
 		graph.add(new Vertex(personSocial2));
@@ -42,15 +47,33 @@ public class test {
 		//Aqui se agregan amigos teniendo en cuenta el id de amigo
 		Boolean isInsert = graph.addConn(1, 5);
 		Boolean isInsert2 = graph.addConn(2, 5);
-		
-		System.out.println("inserto?: " + isInsert2);
+		Boolean isInsert3 = graph.addConn(3, 5);
+                Boolean isInsert4 = graph.addConn(4, 5);
+                Boolean isInsert5 = graph.addConn(5, 5);
+                
+		//System.out.println("inserto?: " + isInsert2);
 		
 		Vertex search = graph.search(comparator, new Vertex(new PersonSocial(5, "")));
-		System.out.println("vertex: " + search.getPersonSocial().getNickName());
+//		System.out.println("vertex: " + search.getPersonSocial().getNickName());
 		Cursor<Vertex> cursor = new Cursor<Vertex>(search);
+                
+                Vector<Vertex> ver = new Vector();
 		while (!cursor.isOut()) {
-			System.out.println("friend: " + cursor.getInfoAndNext().getPersonSocial());
-		}*/
+                    ver.add(cursor.getInfoAndNext());
+		}
+
+                
+                
+                JFrame frame = new JFrame();
+                    frame.setSize(new Dimension(400, 400));
+                    frame.setLayout(new BorderLayout());
+                    GraphPanel grapher = new GraphPanel();
+                    grapher.init(null);
+                    
+                    frame.add(grapher, BorderLayout.CENTER);
+                    
+                    grapher.getPd().setVgrafos(ver);
+                frame.setVisible(true);
 	}
 
 }
