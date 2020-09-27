@@ -1,5 +1,7 @@
 package controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Comparator;
 
 import dataestructure.Cursor;
@@ -7,19 +9,23 @@ import dataestructure.SimpleList;
 import dataestructure.Vertex;
 import models.PersonSocial;
 import models.Social;
+import views.MainView;
 
-public class Controller {
+
+public class Controller implements ActionListener {
 	
 	private Social social;
+	private MainView mainView;
+
 	private Comparator<Vertex> comparator = new Comparator<Vertex>() {
 		@Override
 		public int compare(Vertex o1, Vertex o2) {
-			// TODO Auto-generated method stub
 			return (o1.getPersonSocial().getId() - o2.getPersonSocial().getId() == 0)?0:1;
 		}
 	};
 
 	public Controller() {
+		this.mainView = new MainView(this);
 		social = new Social(comparator, 5);
 		social.show();
 		social.addConn(1, 4);
@@ -81,5 +87,10 @@ public class Controller {
 		}
 		
 		System.out.println(social.size());
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
 	}
 }

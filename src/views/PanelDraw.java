@@ -39,8 +39,6 @@ public class PanelDraw extends JPanel{
         paintComponents(g);
     }
 
-    
-
     @Override
     public void paintComponents(Graphics grafico){
         super.paintComponents(grafico);
@@ -84,8 +82,6 @@ public class PanelDraw extends JPanel{
             }
         }
     }
-    
-    
     
     public Vector<Vertex> getVgrafos() {
         return vgrafos;

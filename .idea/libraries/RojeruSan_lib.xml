@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="RojeruSan.lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/libs/RojeruSan.lib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
