@@ -65,6 +65,7 @@ public class PanelDraw extends JPanel{
                 g.setColor(Color.BLACK);
                 
                 if(vgrafos.get(i).isExist(vgrafos.get(j))){
+                    //System.out.println(vgrafos.get(i).getPersonSocial().getId() + ": " + vgrafos.get(i).getPersonSocial().getNickName());
                     g.drawLine(xvs.get(i)+15,yvs.get(i)+15,xvs.get(j)+15,yvs.get(j)+15);
                 }
                     

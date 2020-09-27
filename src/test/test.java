@@ -45,13 +45,14 @@ public class test {
                 graph.setComparator(comparator);
 		
 		//Aqui se agregan amigos teniendo en cuenta el id de amigo
-		Boolean isInsert = graph.addConn(1, 2);
+		Boolean isInsert = graph.addConn(6, 2);
                 //esta conexion da nullpointer
-		//Boolean isInsert2 = graph.addConn(2, 5);
+		//Boolean isInsert2 = graph.addConn(1, 3);
 		Boolean isInsert3 = graph.addConn(3, 5);
                 Boolean isInsert4 = graph.addConn(4, 5);
                 Boolean isInsert5 = graph.addConn(5, 5);
-                
+                //este da bug no de porque
+//                Boolean isInsert6 = graph.addConn(6, 5);
 		System.out.println("inserto?: " + isInsert4);
 		
 		Vertex search = graph.search(comparator, new Vertex(new PersonSocial(5, "")));
