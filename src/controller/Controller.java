@@ -91,6 +91,15 @@ public class Controller implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		switch (MainActivity.valueOf(e.getActionCommand())) {
+			case ACCEPT_PERSONS:
+				this.accept_persons();
+				break;
+		}
 	}
+
+	private void accept_persons() {
+		mainView.acceptPersons();
+	}
+
 }
