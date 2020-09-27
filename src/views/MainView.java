@@ -13,9 +13,9 @@ public class MainView extends JFrame {
 	private MainPanel mainPanel;
 
 	public MainView(ActionListener actionListener) {
-		mainViewFeatures();
-		mainViewInstances(actionListener);
-		mainViewInternalContent();
+		this.mainViewFeatures();
+		this.mainViewInstances(actionListener);
+		this.mainViewInternalContent();
 		this.setVisible(true);
 	}
 
@@ -23,12 +23,17 @@ public class MainView extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setExtendedState(MAXIMIZED_BOTH);
 		this.setTitle("Grafos");
-		this.setMinimumSize(new Dimension(480, 320));
+		this.setLayout(new BorderLayout());
+		this.setMinimumSize(new Dimension(1280, 720));
 		//this.setIconImage(new ImageIcon(getClass().getResource("/images/calculadora.png")).getImage());
 	}
 
 	private void mainViewInstances(ActionListener actionListener) {
-		mainPanel = new MainPanel(actionListener);
+		this.mainPanel = new MainPanel(actionListener);
+	}
+
+	public void acceptPersons(){
+		this.mainPanel.acceptPersons();
 	}
 
 	private void mainViewInternalContent() {
