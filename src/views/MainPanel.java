@@ -21,12 +21,6 @@ public class MainPanel extends JPanel {
 	private RSButtonRiple acceptPersonsBTN;
 	private SocialPanel socialPanel;
 
-	private BtnArray[] btnHome = {
-			new BtnArray("A Binario", MainActivity.ACCEPT_PERSONS.toString(), "#3498db", "/images/calculadora.png"),
-			new BtnArray("A ASCII", MainActivity.ACCEPT_PERSONS.toString(), "#3498db", "/images/calculadora.png"),
-			new BtnArray("A Unicode", MainActivity.ACCEPT_PERSONS.toString(), "#3498db", "/images/calculadora.png"),
-			new BtnArray("A IEEE 754", MainActivity.ACCEPT_PERSONS.toString(), "#3498db", "/images/calculadora.png") };
-
 
 	public MainPanel(ActionListener actionListener) {
 		this.mainPanelFeatures();
@@ -102,6 +96,8 @@ public class MainPanel extends JPanel {
 
 	public void acceptPersons() {
 		this.removeAll();
+		this.repaint();
+		this.revalidate();
 		this.add(socialPanel, BorderLayout.CENTER);
 		this.repaint();
 	}

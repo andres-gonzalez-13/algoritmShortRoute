@@ -1,33 +1,30 @@
 package views;
 
-public class BtnArray {
+import rojeru_san.RSButtonRiple;
 
-	String textBtn;
-	String commandBtn;
-	String colorBtn;
-	String urlImageBtn;
+import java.awt.*;
+import java.awt.event.ActionListener;
 
-	public BtnArray(String textBtn, String commandBtn, String colorBtn, String urlImageBtn) {
-		super();
-		this.textBtn = textBtn;
-		this.commandBtn = commandBtn;
-		this.colorBtn = colorBtn;
-		this.urlImageBtn = urlImageBtn;
+public class BtnArray extends RSButtonRiple {
+
+	public  BtnArray(String text, String command, ActionListener actionListener, String color) {
+		this.setText(text);
+		this.setActionCommand(command);
+		this.addActionListener(actionListener);
+		btnRipleFeatures(this, color);
 	}
 
-	public String getTextBtn() {
-		return textBtn;
+	private static void btnRipleFeatures(RSButtonRiple rsButtonRiple, String color) {
+		rsButtonRiple.setFocusable(false);
+		rsButtonRiple.setColorHover(Color.decode("#2ecc71"));
+		rsButtonRiple.setBackground(Color.decode(color));
+		rsButtonRiple.setFont(fontBtn(16));
+		rsButtonRiple.setBorderPainted(false);
 	}
 
-	public String getCommandBtn() {
-		return commandBtn;
+	public static Font fontBtn(int size) {
+		Font ralewaye = new Font("Raleway", Font.PLAIN, size);
+		return ralewaye;
 	}
 
-	public String getColorBtn() {
-		return colorBtn;
-	}
-
-	public String getUrlImageBtn() {
-		return urlImageBtn;
-	}
 }
