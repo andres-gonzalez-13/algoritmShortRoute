@@ -50,9 +50,13 @@ public class PersonsDialog extends JDialog {
         this.socialPerson.setModel(socialBoxModel);
 
 
-        this.add(socialPerson);
-        this.add(secondSocialPerson);
-        this.add(acceptAction);
+        socialPerson.setFont(Constants.fontBtn(20));
+        secondSocialPerson.setFont(Constants.fontBtn(20));
+        acceptAction.setFont(Constants.fontBtn(20));
+
+        this.add(Constants.insidePanel(socialPerson, 15,70,15,70,"#FFFF",false));
+        this.add(Constants.insidePanel(secondSocialPerson, 15,70,15,70,"#FFFF",false));
+        this.add(Constants.insidePanel(acceptAction, 15,70,15,70,"#FFFF",false));
 
     }
 
@@ -76,6 +80,14 @@ public class PersonsDialog extends JDialog {
             System.out.println("PERSONAS PROBANDO: " + personSocialCursor.info().getNickName());
             secondSocialBoxModel.addElement(personSocialCursor.info().getId() + ", " + personSocialCursor.getInfoAndNext().getNickName());
         }
+
+        if (secondSocialBoxModel.getSize() == 0){
+            acceptAction.setEnabled(false);
+        } else {
+            acceptAction.setEnabled(true);
+        }
+
+
         secondSocialPerson.setModel(secondSocialBoxModel);
         secondSocialPerson.revalidate();
         secondSocialPerson.repaint();
@@ -95,6 +107,14 @@ public class PersonsDialog extends JDialog {
         while (!socialCursorDeleted.isOut()) {
             secondSocialBoxModel.addElement(socialCursorDeleted.info().getPersonSocial().getId() + ", " + socialCursorDeleted.getInfoAndNext().getPersonSocial().getNickName());
         }
+
+        if (secondSocialBoxModel.getSize() == 0){
+            acceptAction.setEnabled(false);
+        } else {
+            acceptAction.setEnabled(true);
+        }
+
+
         secondSocialPerson.setModel(secondSocialBoxModel);
         secondSocialPerson.revalidate();
         secondSocialPerson.repaint();
@@ -108,6 +128,15 @@ public class PersonsDialog extends JDialog {
         while (!personSocialCursor.isOut()) {
             secondSocialBoxModel.addElement(personSocialCursor.info().getId() + ", " + personSocialCursor.getInfoAndNext().getNickName());
         }
+
+        if (secondSocialBoxModel.getSize() == 0){
+            acceptAction.setEnabled(false);
+        } else {
+            acceptAction.setEnabled(true);
+        }
+
+
+
         secondSocialPerson.setModel(secondSocialBoxModel);
         secondSocialPerson.revalidate();
         secondSocialPerson.repaint();

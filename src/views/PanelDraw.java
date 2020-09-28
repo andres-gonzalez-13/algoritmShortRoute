@@ -19,7 +19,7 @@ import javax.swing.JPanel;
  */
 public class PanelDraw extends JPanel{
 
-    int x = 740;
+    int x = 715;
     int y = 440;
     int ancho = 60;
     int alto = 60;

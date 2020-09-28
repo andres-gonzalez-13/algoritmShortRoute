@@ -33,6 +33,13 @@ public class MainPanel extends JPanel {
 		this.mainPanelFeatures();
 		this.mainPanelInstances(actionListener, vertexToShow, social);
 		this.mainPanelInternalContent();
+        if (numberPersonsTextFull.getText().equals("")){
+            acceptPersonsBTN.setEnabled(false);
+        } else if(Integer.parseInt(numberPersonsTextFull.getText()) > 20 || Integer.parseInt(numberPersonsTextFull.getText())==0){
+            acceptPersonsBTN.setEnabled(false);
+        } else {
+            acceptPersonsBTN.setEnabled(true);
+        }
 	}
 
 	private void mainPanelFeatures() {
@@ -61,7 +68,7 @@ public class MainPanel extends JPanel {
 			public void keyReleased(KeyEvent e) {
 				if (numberPersonsTextFull.getText().equals("")){
 					acceptPersonsBTN.setEnabled(false);
-				} else if(Integer.parseInt(numberPersonsTextFull.getText()) > 20 || Integer.parseInt(numberPersonsTextFull.getText())==0){
+				} else if(Integer.parseInt(numberPersonsTextFull.getText()) > 20 || Integer.parseInt(numberPersonsTextFull.getText())==0 || Integer.parseInt(numberPersonsTextFull.getText())<2){
 					acceptPersonsBTN.setEnabled(false);
 				} else {
 					acceptPersonsBTN.setEnabled(true);
@@ -94,7 +101,7 @@ public class MainPanel extends JPanel {
 		JLabel welcomeLabel = new JLabel();
 		JLabel membersLabel = new JLabel();
 		personPanel.setBackground(Color.decode("#31345f"));
-		this.featuresLabel(welcomeLabel, "¡Bienvenido! ^^");
+		this.featuresLabel(welcomeLabel, "<html><p align='center' >¡Bienvenido! ^^ <br/>Integrantes: <html>");
 		this.featuresLabel(membersLabel, "<html><p align='center' >Andres Santiago Gonzales Moreno<br/>Jhonn Eduardo Hernandez Vega<br/>Cristian Camilo Lopez Niño</p></html>\"");
 
 		auxPanel.setBackground(Color.decode("#31345f"));
@@ -153,11 +160,7 @@ public class MainPanel extends JPanel {
 		this.removeAll();
 		this.repaint();
 		this.revalidate();
-
-
-
 		this.socialPanel = new SocialPanel(actionListener, vertexToShow, social);
-
 		this.add(socialPanel, BorderLayout.CENTER);
 		this.repaint();
 	}

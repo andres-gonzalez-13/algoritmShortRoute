@@ -2,30 +2,20 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/views/InformationPanel.java" line="16" />
-    <bookmark url="file://$PROJECT_DIR$/src/views/SocialPanel.java" line="129" />
+    <bookmark url="file://$PROJECT_DIR$/src/views/SocialPanel.java" line="158" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a75ee902-a196-46f8-93f1-246aa1e34d4c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/ShowMessageDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/ShowMessagePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/flatlaf_demo_0_42.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/libs/flatlaf-demo-0.42.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/controller/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/controller/Controller$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/controller/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/controller/Controller$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/controller/MainActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/controller/MainActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/models/Social.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/models/Social.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/views/LeaveAndCommonDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/views/LeaveAndCommonDialog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algoritmShortRoute.iml" beforeDir="false" afterPath="$PROJECT_DIR$/algoritmShortRoute.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/run/Runner.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/run/Runner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/views/MainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/views/MainPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/views/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/views/MainView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/views/PersonsDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/views/PersonsDialog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/views/SocialPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/views/SocialPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Social.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Social.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/run/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/run/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/LeaveAndCommonDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/LeaveAndCommonDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/PanelDraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PanelDraw.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/PersonsDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PersonsDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/SocialPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SocialPanel.java" afterDir="false" />
     </list>
@@ -42,103 +32,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/MainPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="97" column="55" selection-start-line="97" selection-start-column="55" selection-end-line="97" selection-end-column="55" />
+            <state relative-caret-position="340">
+              <caret line="70" column="190" selection-start-line="70" selection-start-column="190" selection-end-line="70" selection-end-column="190" />
               <folding>
-                <element signature="e#4002#4003#0" expanded="true" />
-                <element signature="e#4065#4066#0" expanded="true" />
-                <element signature="e#5781#5782#0" expanded="true" />
-                <element signature="e#6556#6557#0" expanded="true" />
-                <element signature="e#6629#6630#0" expanded="true" />
-                <element signature="e#6856#6857#0" expanded="true" />
-                <element signature="e#6956#6957#0" expanded="true" />
-                <element signature="e#7439#7440#0" expanded="true" />
+                <element signature="e#5736#5737#0" expanded="true" />
+                <element signature="e#5788#5789#0" expanded="true" />
+                <element signature="e#6513#6514#0" expanded="true" />
+                <element signature="e#6563#6564#0" expanded="true" />
+                <element signature="e#6596#6597#0" expanded="true" />
+                <element signature="e#6636#6637#0" expanded="true" />
+                <element signature="e#6815#6816#0" expanded="true" />
+                <element signature="e#6863#6864#0" expanded="true" />
+                <element signature="e#6920#6921#0" expanded="true" />
+                <element signature="e#6963#6964#0" expanded="true" />
+                <element signature="e#7401#7402#0" expanded="true" />
+                <element signature="e#7446#7447#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="110" column="51" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1774#1775#0" expanded="true" />
-                <element signature="e#1802#1803#0" expanded="true" />
-                <element signature="e#2139#2140#0" expanded="true" />
-                <element signature="e#2191#2192#0" expanded="true" />
-                <element signature="e#2537#2538#0" expanded="true" />
-                <element signature="e#2590#2591#0" expanded="true" />
-                <element signature="e#3263#3264#0" expanded="true" />
-                <element signature="e#3310#3311#0" expanded="true" />
-                <element signature="e#3433#3434#0" expanded="true" />
-                <element signature="e#3489#3490#0" expanded="true" />
-                <element signature="e#4049#4050#0" expanded="true" />
-                <element signature="e#4095#4096#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="100" selection-start-line="6" selection-start-column="100" selection-end-line="6" selection-end-column="100" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/ShowMessageDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/Social.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="142" selection-start-line="12" selection-start-column="142" selection-end-line="12" selection-end-column="142" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5612#5626#0" expanded="true" />
-                <element signature="e#5666#5674#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/SocialPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="45" column="4" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="49" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5286#5287#0" expanded="true" />
-                <element signature="e#5342#5343#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/PersonSocial.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -146,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/ShowMessagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="220">
               <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -155,21 +67,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/MainView.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/SocialPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+            <state relative-caret-position="475">
+              <caret line="148" column="55" selection-start-line="148" selection-start-column="55" selection-end-line="148" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1427#1428#0" expanded="true" />
-                <element signature="e#1464#1465#0" expanded="true" />
-                <element signature="e#1320#1321#0" expanded="true" />
-                <element signature="e#1362#1363#0" expanded="true" />
-                <element signature="e#2092#2093#0" expanded="true" />
-                <element signature="e#2138#2139#0" expanded="true" />
-                <element signature="e#2978#2979#0" expanded="true" />
-                <element signature="e#3021#3022#0" expanded="true" />
+                <element signature="e#7523#7524#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/ShowMessageDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,10 +95,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/PersonsDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+            <state relative-caret-position="356">
+              <caret line="131" selection-start-line="131" selection-end-line="136" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/PanelDraw.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-544">
+              <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/LeaveAndCommonDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1623#1624#0" expanded="true" />
+                <element signature="e#1719#1720#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -209,24 +149,25 @@
         <option value="$PROJECT_DIR$/src/test/test.java" />
         <option value="$PROJECT_DIR$/src/views/GraphPanel.java" />
         <option value="$PROJECT_DIR$/src/utils/Constants.java" />
-        <option value="$PROJECT_DIR$/src/views/PanelDraw.java" />
         <option value="$PROJECT_DIR$/src/views/PersonsBox.java" />
         <option value="$PROJECT_DIR$/src/views/LeaveAndComunDialog.java" />
         <option value="$PROJECT_DIR$/src/views/LeaveAndComoonDialog.java" />
-        <option value="$PROJECT_DIR$/src/views/LeaveAndCommonDialog.java" />
         <option value="$PROJECT_DIR$/src/views/ShowMessagePanel.java" />
         <option value="$PROJECT_DIR$/src/views/ShowMessageDialog.java" />
-        <option value="$PROJECT_DIR$/src/views/PersonsDialog.java" />
         <option value="$PROJECT_DIR$/src/controller/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/controller/Controller.java" />
-        <option value="$PROJECT_DIR$/src/views/SocialPanel.java" />
         <option value="$PROJECT_DIR$/src/models/Social.java" />
         <option value="$PROJECT_DIR$/src/views/MainView.java" />
+        <option value="$PROJECT_DIR$/src/run/Runner.java" />
+        <option value="$PROJECT_DIR$/src/views/PanelDraw.java" />
+        <option value="$PROJECT_DIR$/src/views/PersonsDialog.java" />
         <option value="$PROJECT_DIR$/src/views/MainPanel.java" />
+        <option value="$PROJECT_DIR$/src/views/LeaveAndCommonDialog.java" />
+        <option value="$PROJECT_DIR$/src/views/SocialPanel.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="656" />
@@ -270,7 +211,25 @@
               <item name="algoritmShortRoute" type="b2602c69:ProjectViewProjectNode" />
               <item name="algoritmShortRoute" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="algoritmShortRoute" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algoritmShortRoute" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="algoritmShortRoute" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algoritmShortRoute" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="run" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="algoritmShortRoute" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algoritmShortRoute" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="algoritmShortRoute" type="b2602c69:ProjectViewProjectNode" />
@@ -295,13 +254,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Universidad\7) Septimo semestre\Matematicas discretas\Proyecto\algoritmShortRoute\src\libs" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Universidad\7) Septimo semestre\Matematicas discretas\Proyecto\algoritmShortRoute\src" />
       <recent name="D:\Universidad\7) Septimo semestre\Matematicas discretas\Proyecto\algoritmShortRoute\src\views" />
       <recent name="D:\Universidad\7) Septimo semestre\Matematicas discretas\Proyecto\algoritmShortRoute\src\controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Universidad\7) Septimo semestre\Matematicas discretas\Proyecto\algoritmShortRoute\src\libs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -347,12 +306,12 @@
       <option name="presentableId" value="Default" />
       <updated>1601223599532</updated>
       <workItem from="1601223601112" duration="39725000" />
-      <workItem from="1601305493889" duration="12114000" />
+      <workItem from="1601305493889" duration="17627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51839000" />
+    <option name="totallyTimeSpent" value="57352000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -382,7 +341,7 @@
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
       <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.49933863" visible="true" weight="0.24918744" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.3982412" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3261105" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -468,17 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/run/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#109#110#0" expanded="true" />
-            <element signature="e#132#133#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/BtnArray.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -521,35 +469,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/GraphPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/PanelDraw.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/LeaveAndCommonDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-            <element signature="e#1727#1728#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/images/backgroundTwo.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -558,16 +477,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/images/background.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/ShowMessagePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -580,16 +489,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="1752" column="12" selection-start-line="1752" selection-end-line="1753" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/ShowMessageDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -652,22 +551,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/SocialPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/views/GraphPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="45" column="4" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="49" selection-end-column="64" />
+        <state relative-caret-position="260">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5286#5287#0" expanded="true" />
-            <element signature="e#5342#5343#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/run/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/ShowMessageDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/PanelDraw.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-544">
+          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/PersonsDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+        <state relative-caret-position="356">
+          <caret line="131" selection-start-line="131" selection-end-line="136" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/LeaveAndCommonDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1623#1624#0" expanded="true" />
+            <element signature="e#1719#1720#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/ShowMessagePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -676,17 +622,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/MainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="97" column="55" selection-start-line="97" selection-start-column="55" selection-end-line="97" selection-end-column="55" />
+        <state relative-caret-position="340">
+          <caret line="70" column="190" selection-start-line="70" selection-start-column="190" selection-end-line="70" selection-end-column="190" />
           <folding>
-            <element signature="e#4002#4003#0" expanded="true" />
-            <element signature="e#4065#4066#0" expanded="true" />
-            <element signature="e#5781#5782#0" expanded="true" />
-            <element signature="e#6556#6557#0" expanded="true" />
-            <element signature="e#6629#6630#0" expanded="true" />
-            <element signature="e#6856#6857#0" expanded="true" />
-            <element signature="e#6956#6957#0" expanded="true" />
-            <element signature="e#7439#7440#0" expanded="true" />
+            <element signature="e#5736#5737#0" expanded="true" />
+            <element signature="e#5788#5789#0" expanded="true" />
+            <element signature="e#6513#6514#0" expanded="true" />
+            <element signature="e#6563#6564#0" expanded="true" />
+            <element signature="e#6596#6597#0" expanded="true" />
+            <element signature="e#6636#6637#0" expanded="true" />
+            <element signature="e#6815#6816#0" expanded="true" />
+            <element signature="e#6863#6864#0" expanded="true" />
+            <element signature="e#6920#6921#0" expanded="true" />
+            <element signature="e#6963#6964#0" expanded="true" />
+            <element signature="e#7401#7402#0" expanded="true" />
+            <element signature="e#7446#7447#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/SocialPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="148" column="55" selection-start-line="148" selection-start-column="55" selection-end-line="148" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7523#7524#0" expanded="true" />
           </folding>
         </state>
       </provider>

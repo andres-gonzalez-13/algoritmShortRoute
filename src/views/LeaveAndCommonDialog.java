@@ -5,6 +5,7 @@ import dataestructure.Cursor;
 import dataestructure.Vertex;
 import models.Social;
 import rojeru_san.RSButtonRiple;
+import utils.Constants;
 
 import javax.swing.*;
 import java.awt.*;
@@ -32,9 +33,18 @@ public class LeaveAndCommonDialog extends JDialog {
             socialBoxModel.addElement(socialCursor.info().getPersonSocial().getId() + ", " + socialCursor.getInfoAndNext().getPersonSocial().getNickName());
         }
 
+        if (socialBoxModel.getSize() == 0){
+            this.btnDelete.setEnabled(false);
+        } else {
+            this.btnDelete.setEnabled(true);
+        }
+
         socialPerson.setModel(socialBoxModel);
-        this.add(socialPerson);
-        this.add(btnDelete);
+        btnDelete.setText("Dejar la red social");
+        socialPerson.setFont(Constants.fontBtn(20));
+        btnDelete.setFont(Constants.fontBtn(20));
+        this.add(Constants.insidePanel(socialPerson, 15,70,15,70,"#FFFF",false));
+        this.add(Constants.insidePanel(btnDelete, 15,70,15,70,"#FFFF",false));
 
     }
 
@@ -45,6 +55,7 @@ public class LeaveAndCommonDialog extends JDialog {
         this.setLayout(new GridLayout(5, 1));
         this.setSize(720, 480);
         this.setModal(true);
+        this.setTitle("Dejar la red social");
         this.setLocationRelativeTo(null); //JUSTO DESPUES DE MI "setSize()"
     }
 
