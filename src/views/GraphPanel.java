@@ -3,7 +3,7 @@
 
 package views;
 
-import java.awt.BorderLayout;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -16,32 +16,20 @@ import javax.swing.JTextField;
  */
 public class GraphPanel extends JPanel{
     
-    private PanelDraw pd;
-    int max = 0;
-    private JTextField valor;
- 
-    public void init(ActionListener action){
-        setLayout(new BorderLayout());
-        pd = new PanelDraw();
-        add(pd, BorderLayout.CENTER);
+    private PanelDraw panelDraw;
 
-        JPanel pdatos=new JPanel();
-
-        JButton agregar = new JButton("Agregar Nodo");
-        agregar.addActionListener(action);
-
-        valor=new JTextField(5);
-//        pdatos.add(new JLabel("Valor Vertice" +""));
-//        pdatos.add(valor);
-//        pdatos.add(agregar);
-        add(pdatos,BorderLayout.SOUTH);
+    public GraphPanel(){
+        this.panelDraw = new PanelDraw();
+        this.setLayout(new BorderLayout());
+        this.add(this.panelDraw, BorderLayout.CENTER);
     }
 
-    public PanelDraw getPd() {
-        return pd;
+
+    public PanelDraw getPanelDraw() {
+        return this.panelDraw;
     }
-    
-    
+
+
  
 }
 

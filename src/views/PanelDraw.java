@@ -4,6 +4,8 @@
 package views;
 
 import dataestructure.Vertex;
+import utils.Constants;
+
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -17,10 +19,10 @@ import javax.swing.JPanel;
  */
 public class PanelDraw extends JPanel{
 
-    int x = 200;
-    int y = 200;
-    int ancho = 30;
-    int alto = 30;
+    int x = 740;
+    int y = 440;
+    int ancho = 60;
+    int alto = 60;
     public Vector<Integer> xvs;
     public Vector<Integer> yvs;
     public Vector<Vertex> vgrafos;
@@ -30,12 +32,12 @@ public class PanelDraw extends JPanel{
         vgrafos = new Vector();
         xvs = new Vector<Integer>();
         yvs = new Vector<Integer>();
+        this.setOpaque(false);
         setDoubleBuffered(true);
     }
 
     @Override
     public void paint(Graphics g) {
-        System.out.println("pintando");
         paintComponents(g);
     }
 
@@ -43,11 +45,11 @@ public class PanelDraw extends JPanel{
     public void paintComponents(Graphics grafico){
         super.paintComponents(grafico);
         Graphics2D g = (Graphics2D)grafico;
+
         if(vgrafos.size() != 0){
-            g.setColor(Color.WHITE);
+            g.setColor(new Color(0,0,0,0));
             g.fillRect(0, 0, getWidth(), getHeight());
-            g.setColor(Color.BLACK);
-            int radio = 200;
+            int radio = 350;
             float angulo = 360/vgrafos.size();
             angulo = (float) Math.toRadians(angulo);
             for(int i = indice;i < vgrafos.size();i++){
@@ -58,28 +60,21 @@ public class PanelDraw extends JPanel{
                 indice++;
             }
         }
-        System.out.println("grafos a dibujar: " + vgrafos.size());
+
         for(int i = 0;i < vgrafos.size();i++){
             for(int j = 0;j < vgrafos.size();j++){
                 g.setStroke(new BasicStroke(2));
                 g.setColor(Color.BLACK);
-                
+                g.setFont(Constants.fontBtn(22));
                 if(vgrafos.get(i).isExist(vgrafos.get(j))){
-                    //System.out.println(vgrafos.get(i).getPersonSocial().getId() + ": " + vgrafos.get(i).getPersonSocial().getNickName());
                     g.drawLine(xvs.get(i)+15,yvs.get(i)+15,xvs.get(j)+15,yvs.get(j)+15);
                 }
-                    
                 g.setColor(Color.WHITE);
                 g.fillOval(xvs.get(i), yvs.get(i), ancho, alto);
                 g.setColor(Color.BLACK);
                 g.drawOval(xvs.get(i),yvs.get(i), ancho, alto);
                 g.drawString(""+vgrafos.get(i).getPersonSocial().getNickName(), xvs.get(i)+((ancho/2)-3), yvs.get(i)+((alto/2)+3));
-                
-                g.setColor(Color.WHITE);
-                g.fillOval(xvs.get(j), yvs.get(j), ancho, alto);
-                g.setColor(Color.BLACK);
-                g.drawOval(xvs.get(j),yvs.get(j), ancho, alto);
-                g.drawString(""+vgrafos.get(j).getPersonSocial().getNickName(), xvs.get(j)+((ancho/2)-3), yvs.get(j)+((alto/2)+3));
+
             }
         }
     }

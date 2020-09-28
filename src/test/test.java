@@ -73,11 +73,9 @@ public class test {
                     frame.setSize(new Dimension(400, 400));
                     frame.setLayout(new BorderLayout());
                     GraphPanel grapher = new GraphPanel();
-                    grapher.init(null);
-                    
+
                     frame.add(grapher, BorderLayout.CENTER);
                     
-                    grapher.getPd().setVgrafos(vertexToShow);
                 frame.setVisible(true);
 	}
 

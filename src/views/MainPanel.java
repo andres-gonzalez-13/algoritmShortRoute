@@ -2,9 +2,11 @@ package views;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 import javax.swing.*;
 
 import controller.MainActivity;
+import dataestructure.Vertex;
 import rojeru_san.RSButtonRiple;
 import rojeru_san.RSMTextFull;
 import utils.Constants;
@@ -22,9 +24,9 @@ public class MainPanel extends JPanel {
 	private SocialPanel socialPanel;
 
 
-	public MainPanel(ActionListener actionListener) {
+	public MainPanel(ActionListener actionListener, Vector<Vertex> vertexToShow) {
 		this.mainPanelFeatures();
-		this.mainPanelInstances(actionListener);
+		this.mainPanelInstances(actionListener, vertexToShow);
 		this.mainPanelInternalContent();
 	}
 
@@ -33,7 +35,7 @@ public class MainPanel extends JPanel {
 		this.setLayout(new BorderLayout());
 	}
 
-	private void mainPanelInstances(ActionListener actionListener) {
+	private void mainPanelInstances(ActionListener actionListener, Vector<Vertex> vertexToShow) {
 		this.backGroundImage();
 		this.numberPersonsTextFull = this.numberPersonsTextFull();
 		this.acceptPersonsBTN = this.acceptPersonsBTN(actionListener);
@@ -41,7 +43,7 @@ public class MainPanel extends JPanel {
 		this.personPanel = this.personPanel();
 		this.informationPanel = new InformationPanel();
 		this.startPanel = this.startPanelFeatures();
-		this.socialPanel = new SocialPanel(actionListener);
+		this.socialPanel = new SocialPanel(actionListener, vertexToShow);
 	}
 
 	private void mainPanelInternalContent() {
@@ -101,6 +103,24 @@ public class MainPanel extends JPanel {
 		this.add(socialPanel, BorderLayout.CENTER);
 		this.repaint();
 	}
+
+	public void addFriend() {
+		socialPanel.addFriend();
+	}
+
+	public void deleteFriend() {
+		socialPanel.deleteFriend();
+	}
+
+	public void mutualFriends() {
+		socialPanel.mutualFriends();
+	}
+
+	public void leaveTheSocialNetwork() {
+		socialPanel.leaveTheSocialNetwork();
+	}
+
+
 
 	protected void paintComponent(Graphics graphics) {
 		super.paintComponent(graphics);

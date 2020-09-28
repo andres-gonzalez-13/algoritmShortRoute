@@ -59,4 +59,6 @@ public class Constants {
         return ralewaye;
     }
 
+    public static final Font bold_italic = new Font("Lucida Sans Typewriter", Font.BOLD + Font.ITALIC, 14);
+
 }
