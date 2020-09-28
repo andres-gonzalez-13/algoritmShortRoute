@@ -9,8 +9,8 @@ import dataestructure.Vertex;
 
 public class Social extends Graph{
 	
-	private String[] nombres = {"María Carmen","María","Carmen","Josefa","Ana María","Isabel", "María Pilar","María Dolores","Laura","María Teresa",
-			"Antonio","José","Manuel", "Francisco","David","Juan","José Antonio","Javier","José Luis","Daniel","Lucía","Martina","María","Sofía",
+	private String[] nombres = {"Maria Carmen","Maria","Carmen","Josefa","Ana Maria","Isabel", "Maria Pilar","Maria Dolores","Laura","Maria Teresa",
+			"Antonio","Jose","Manuel", "Francisco","David","Juan","Jose Antonio","Javier","Jose Luis","Daniel","Lucia","Martina","Maria","Sofia",
 			"Paula","Daniela","Valeria","Alba","Julia","Noa"};
 	
 	public Social(Comparator<Vertex> comparator, int cant) {
@@ -168,6 +168,18 @@ public class Social extends Graph{
 			cursor.next();
 		}
 		return null;
+	}
+
+	public SimpleList<PersonSocial> getPersonsNotI(int idPerson){
+		SimpleList<PersonSocial> persons = new SimpleList<PersonSocial>();
+		Cursor<Vertex> cursor = new Cursor<Vertex>(this);
+		while (!cursor.isOut()) {
+			if(cursor.info().getPersonSocial().getId() != idPerson) {
+				persons.add(cursor.info().getPersonSocial());
+			}
+			cursor.next();
+		}
+		return persons;
 	}
 
 }

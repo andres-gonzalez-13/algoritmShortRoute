@@ -2,6 +2,7 @@ package views;
 
 import controller.MainActivity;
 import dataestructure.Cursor;
+import dataestructure.SimpleList;
 import dataestructure.Vertex;
 import models.PersonSocial;
 import models.Social;
@@ -23,6 +24,7 @@ public class PersonsDialog extends JDialog {
     private JComboBox<Social> socialPerson;
     private JComboBox<Social> secondSocialPerson;
     private RSButtonRiple acceptAction;
+    private ShowMessageDialog showMessageDialog;
 
     public JComboBox<Social> getSocialPerson() {
         return socialPerson;
@@ -99,4 +101,28 @@ public class PersonsDialog extends JDialog {
     }
 
 
+    public void mutualFriendsShow(Social social, ActionListener actionListener) {
+        personSocialCursor = new Cursor<>(social.getPersonsNotI(Integer.parseInt(socialPerson.getSelectedItem().toString().split(",")[0])));
+        secondSocialBoxModel = new DefaultComboBoxModel();
+
+        while (!personSocialCursor.isOut()) {
+            secondSocialBoxModel.addElement(personSocialCursor.info().getId() + ", " + personSocialCursor.getInfoAndNext().getNickName());
+        }
+        secondSocialPerson.setModel(secondSocialBoxModel);
+        secondSocialPerson.revalidate();
+        secondSocialPerson.repaint();
+    }
+
+    public void mutualFriendFinally(SimpleList<PersonSocial> commonFriends) {
+
+        JLabel mutualFrindsLabel = new JLabel();
+        Cursor<PersonSocial> commonCursor = new Cursor<>(commonFriends);
+
+        while (!commonCursor.isOut()) {
+            mutualFrindsLabel.setText(commonCursor.getInfoAndNext().getNickName() + ", " + mutualFrindsLabel.getText());
+        }
+        System.out.println("HOLA PRUEBA");
+        showMessageDialog = new ShowMessageDialog(mutualFrindsLabel);
+
+    }
 }

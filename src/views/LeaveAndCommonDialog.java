@@ -51,4 +51,11 @@ public class LeaveAndCommonDialog extends JDialog {
     public int getIdPerson() {
         return Integer.parseInt(socialPerson.getSelectedItem().toString().split(",")[0]);
     }
+
+    public void refresPanel(){
+        this.removeAll();
+        this.add(socialPerson);
+        this.add(btnDelete);
+        this.repaint();
+    }
 }

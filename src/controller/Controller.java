@@ -2,12 +2,15 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
 import java.util.Comparator;
 
 import dataestructure.Cursor;
+import dataestructure.SimpleList;
 import dataestructure.Vertex;
 import java.util.Vector;
 
+import models.PersonSocial;
 import models.Social;
 import views.MainView;
 
@@ -27,23 +30,6 @@ public class Controller implements ActionListener {
 
 	public Controller() {
 
-		social = new Social(comparator, 20);
-	/*	social.show();
-		social.addConn(1, 4);
-		social.addConn(1, 2);
-		social.addConn(1, 0);
-		social.addConn(3, 4);
-		social.addConn(1, 3);
-		social.addConn(0, 4);
-		social.addConn(3, 2);
-		social.addConn(4, 3);*/
-		vertexToShow = new Vector();
-		Cursor<Vertex> cursor2 = new Cursor<Vertex>(social);
-
-		while (!cursor2.isOut()) {
-			vertexToShow.add(cursor2.getInfoAndNext());
-
-		}
 		this.mainView = new MainView(this, vertexToShow, social);
 	}
 
@@ -81,8 +67,31 @@ public class Controller implements ActionListener {
 			case LEAVE_NETWORK_FINALLY:
 				this.leaveNetworkFinally();
 				break;
-
+			case MUTUAL_FRIENDS_SHOW:
+				this.mutualFriendShow();
+				break;
+			case MUTUAL_FRIENDS_FINALLY:
+				this.mutualFriendsFinally();
+				break;
+			case VALUES_LIMIT:
+				this.valuesLimit();
+				break;
 		}
+	}
+
+	private void valuesLimit(){
+		this.mainView.valuesLimit();
+	}
+
+	private void mutualFriendShow() {
+		this.mainView.mutualFriendsShow(social, this);
+	}
+
+	private void mutualFriendsFinally() {
+		int[] id = mainView.commonFrindValues();
+		SimpleList<PersonSocial> commonFriends = social.commonFriends(id[0], id[1]);
+		this.mainView.mutualFriendFinally(commonFriends);
+
 	}
 
 	private void showPersonsDeleted() {
@@ -90,7 +99,7 @@ public class Controller implements ActionListener {
 	}
 
 	private void deleteFriendFinally() {
-		int[] id = mainView.addFriendFinally();
+		int[] id = mainView.addFriendFinally(social);
 		System.out.println("PRIMERA PERSONA DEL: " + id[0] + " SEGUNDA PERSONA DEL: " + id[1]);
 		social.deleteFriend(id[0], id[1]);
 		social.deleteFriend(id[1], id[0]);
@@ -99,14 +108,34 @@ public class Controller implements ActionListener {
 	}
 
 	private void addFriendFinally(){
-		int[] id = mainView.addFriendFinally();
+		int[] id = mainView.addFriendFinally(social);
 		System.out.println("PRIMERA PERSONA: " + id[0] + " SEGUNDA PERSONA: " + id[1]);
 		social.addConn(id[0], id[1]);
 		mainView.repaintGraphic();
 	}
 
 	private void accept_persons() {
-		mainView.acceptPersons();
+		social = new Social(comparator, mainView.getCountPersons());
+		social.show();
+		social.addConn(1, 4);
+		social.addConn(1, 2);
+		social.addConn(1, 0);
+		social.addConn(3, 4);
+		social.addConn(1, 3);
+		social.addConn(0, 4);
+		social.addConn(3, 2);
+		social.addConn(4, 3);
+		vertexToShow = new Vector();
+		Cursor<Vertex> cursor2 = new Cursor<Vertex>(social);
+
+		while (!cursor2.isOut()) {
+			vertexToShow.add(cursor2.getInfoAndNext());
+
+		}
+		mainView.acceptPersons(this, vertexToShow, social);
+
+
+
 
 	}
 
@@ -130,6 +159,7 @@ public class Controller implements ActionListener {
 
 
 	private void leaveNetworkFinally() {
+
 		int id = mainView.leaveNetworkFinally();
 		System.out.println("PRIMERA PERSONA: " + id);
 

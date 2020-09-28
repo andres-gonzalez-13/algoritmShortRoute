@@ -2,11 +2,15 @@ package views;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.Vector;
 import javax.swing.*;
 
 import controller.MainActivity;
+import dataestructure.SimpleList;
 import dataestructure.Vertex;
+import models.PersonSocial;
 import models.Social;
 import rojeru_san.RSButtonRiple;
 import rojeru_san.RSMTextFull;
@@ -39,12 +43,38 @@ public class MainPanel extends JPanel {
 	private void mainPanelInstances(ActionListener actionListener, Vector<Vertex> vertexToShow, Social social) {
 		this.backGroundImage();
 		this.numberPersonsTextFull = this.numberPersonsTextFull();
+
+		this.numberPersonsTextFull.addKeyListener(new KeyListener() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+
+			}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(numberPersonsTextFull.getText().length() > 7){
+					numberPersonsTextFull.setText("1");
+				}
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if (numberPersonsTextFull.getText().equals("")){
+					acceptPersonsBTN.setEnabled(false);
+				} else if(Integer.parseInt(numberPersonsTextFull.getText()) > 20 || Integer.parseInt(numberPersonsTextFull.getText())==0){
+					acceptPersonsBTN.setEnabled(false);
+				} else {
+					acceptPersonsBTN.setEnabled(true);
+				}
+			}
+		});
+
 		this.acceptPersonsBTN = this.acceptPersonsBTN(actionListener);
 		this.imagePerson = this.imagePerson();
 		this.personPanel = this.personPanel();
 		this.informationPanel = new InformationPanel();
 		this.startPanel = this.startPanelFeatures();
-		this.socialPanel = new SocialPanel(actionListener, vertexToShow, social);
+
 	}
 
 	private void mainPanelInternalContent() {
@@ -60,22 +90,40 @@ public class MainPanel extends JPanel {
 
 	private JPanel personPanel() {
 		JPanel personPanel = new JPanel(new BorderLayout());
-		personPanel.setBackground(Color.decode("#31345f"));
-
 		JPanel auxPanel = new JPanel(new GridLayout(4,1));
+		JLabel welcomeLabel = new JLabel();
+		JLabel membersLabel = new JLabel();
+		personPanel.setBackground(Color.decode("#31345f"));
+		this.featuresLabel(welcomeLabel, "¡Bienvenido! ^^");
+		this.featuresLabel(membersLabel, "<html><p align='center' >Andres Santiago Gonzales Moreno<br/>Jhonn Eduardo Hernandez Vega<br/>Cristian Camilo Lopez Niño</p></html>\"");
+
 		auxPanel.setBackground(Color.decode("#31345f"));
 		auxPanel.add(Constants.insidePanel(this.numberPersonsTextFull, 20, 100, 20, 100, "#0000", false));
 		auxPanel.add(Constants.insidePanel(this.acceptPersonsBTN, 20, 150, 20, 150, "#0000", false));
+
+		auxPanel.add(Constants.insidePanel(welcomeLabel, 20, 100, 20, 100, "#0000", false));
+		auxPanel.add(Constants.insidePanel(membersLabel, 0, 100, 5, 100, "#0000", false));
 
 		personPanel.add(Constants.insidePanel(this.imagePerson, 20, 20, 0, 20, "#0000", false), BorderLayout.PAGE_START);
 		personPanel.add(Constants.insidePanel(auxPanel, 10,10,10,10,"#0000", false), BorderLayout.CENTER);
 		return personPanel;
 	}
 
+	private void featuresLabel(JLabel label, String string){
+		label.setText(string);
+		label.setFont(Constants.fontBtn(18));
+		label.setForeground(Color.WHITE);
+		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setVerticalTextPosition(JLabel.CENTER);
+		label.setHorizontalTextPosition(JLabel.CENTER);
+		label.setVerticalAlignment(JLabel.CENTER);
+	}
+
 	private RSMTextFull numberPersonsTextFull(){
 		RSMTextFull numberPersonsTextFull = new RSMTextFull();
-		numberPersonsTextFull.setPlaceholder("Ingresa el numero de personas para el grafo");
+		numberPersonsTextFull.setPlaceholder("Ingresa el numero de personas (Menor o igual a 20)");
 		numberPersonsTextFull.setModoMaterial(true);
+		numberPersonsTextFull.setSoloNumeros(true);
 		return numberPersonsTextFull;
 	}
 
@@ -86,8 +134,12 @@ public class MainPanel extends JPanel {
 		return  imagePerson;
 	}
 
+	public void valuesLimit(){
+
+	}
+
 	private RSButtonRiple acceptPersonsBTN(ActionListener actionListener) {
-		RSButtonRiple acceptPersonBTN = Constants.btnRiple("¡Aceptar! ^^", MainActivity.ACCEPT_PERSONS.toString(), actionListener, "#27ae60");
+		RSButtonRiple acceptPersonBTN = Constants.btnRiple("Aceptar", MainActivity.ACCEPT_PERSONS.toString(), actionListener, "#27ae60");
 		return acceptPersonBTN;
 	}
 
@@ -97,12 +149,21 @@ public class MainPanel extends JPanel {
 		return backGroundImage;
 	}
 
-	public void acceptPersons() {
+	public void acceptPersons(ActionListener actionListener, Vector<Vertex> vertexToShow, Social social) {
 		this.removeAll();
 		this.repaint();
 		this.revalidate();
+
+
+
+		this.socialPanel = new SocialPanel(actionListener, vertexToShow, social);
+
 		this.add(socialPanel, BorderLayout.CENTER);
 		this.repaint();
+	}
+
+	public int getCountPersons(){
+		return Integer.parseInt(numberPersonsTextFull.getText());
 	}
 
 	public void addFriend(Social social, ActionListener actionListener) {
@@ -132,8 +193,8 @@ public class MainPanel extends JPanel {
 		socialPanel.showPersons(social, actionListener);
 	}
 
-	public int[] addFrienFinally() {
-		return  socialPanel.addFrienFinally();
+	public int[] addFrienFinally(Social social) {
+		return  socialPanel.addFrienFinally(social);
 	}
 
 	public void repaintGraphic() {
@@ -155,5 +216,17 @@ public class MainPanel extends JPanel {
 
 	public void refreshValues(Social social, ActionListener actionListener) {
 		socialPanel.refreshValues(social, actionListener);
+	}
+
+	public void mutualFriendsShow(Social social, ActionListener actionListener) {
+		socialPanel.mutualFriendsShow(social, actionListener);
+	}
+
+	public void mutualFriendFinally(SimpleList<PersonSocial> commonFriends) {
+		socialPanel.mutualFriendFinally(commonFriends);
+	}
+
+	public int[] commonFrindValues() {
+		return socialPanel.commonFrindValues();
 	}
 }
