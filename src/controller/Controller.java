@@ -7,8 +7,13 @@ import java.util.Comparator;
 import dataestructure.Cursor;
 import dataestructure.SimpleList;
 import dataestructure.Vertex;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.util.Vector;
+import javax.swing.JFrame;
 import models.PersonSocial;
 import models.Social;
+import views.GraphPanel;
 import views.MainView;
 
 
@@ -26,7 +31,7 @@ public class Controller implements ActionListener {
 
 	public Controller() {
 		this.mainView = new MainView(this);
-		social = new Social(comparator, 5);
+		social = new Social(comparator, 20);
 		social.show();
 		social.addConn(1, 4);
 		social.addConn(1, 2);
@@ -37,7 +42,7 @@ public class Controller implements ActionListener {
 		social.addConn(3, 2);
 		social.addConn(4, 3);
 		
-		
+		renderGraph();
 		
 	
 		/*	
@@ -101,5 +106,27 @@ public class Controller implements ActionListener {
 	private void accept_persons() {
 		mainView.acceptPersons();
 	}
+        
+        public void renderGraph(){
+            
+            Vector<Vertex> vertexToShow = new Vector();                
+            Cursor<Vertex> cursor2 = new Cursor<Vertex>(social);
+                while (!cursor2.isOut()) {
+                vertexToShow.add(cursor2.getInfoAndNext());
+            }
+
+
+            JFrame frame = new JFrame();
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setSize(new Dimension(400, 400));
+                frame.setLayout(new BorderLayout());
+                GraphPanel grapher = new GraphPanel();
+                grapher.init(null);
+
+                frame.add(grapher, BorderLayout.CENTER);
+
+                grapher.getPd().setVgrafos(vertexToShow);
+            frame.setVisible(true);
+        }
 
 }

@@ -17,10 +17,10 @@ import javax.swing.JPanel;
  */
 public class PanelDraw extends JPanel{
 
-    int x=150;
-    int y=150;
-    int ancho=30;
-    int alto=30;
+    int x = 200;
+    int y = 200;
+    int ancho = 30;
+    int alto = 30;
     public Vector<Integer> xvs;
     public Vector<Integer> yvs;
     public Vector<Vertex> vgrafos;
@@ -65,6 +65,7 @@ public class PanelDraw extends JPanel{
                 g.setColor(Color.BLACK);
                 
                 if(vgrafos.get(i).isExist(vgrafos.get(j))){
+                    //System.out.println(vgrafos.get(i).getPersonSocial().getId() + ": " + vgrafos.get(i).getPersonSocial().getNickName());
                     g.drawLine(xvs.get(i)+15,yvs.get(i)+15,xvs.get(j)+15,yvs.get(j)+15);
                 }
                     
