@@ -152,4 +152,8 @@ public class MainPanel extends JPanel {
 	public void resetGraph(Vector<Vertex> vertexToShow) {
 		socialPanel.resetGraph(vertexToShow);
 	}
+
+	public void refreshValues(Social social, ActionListener actionListener) {
+		socialPanel.refreshValues(social, actionListener);
+	}
 }

@@ -85,4 +85,8 @@ public class MainView extends JFrame {
 	public void resetGraph(Vector<Vertex> vertexToShow) {
 		this.mainPanel.resetGraph(vertexToShow);
 	}
+
+	public void refreshValues(Social social, ActionListener actionListener) {
+		mainPanel.refreshValues(social, actionListener);
+	}
 }

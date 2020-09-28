@@ -71,6 +71,7 @@ public class PersonsDialog extends JDialog {
 
         secondSocialBoxModel = new DefaultComboBoxModel();
         while (!personSocialCursor.isOut()) {
+            System.out.println("PERSONAS PROBANDO: " + personSocialCursor.info().getNickName());
             secondSocialBoxModel.addElement(personSocialCursor.info().getId() + ", " + personSocialCursor.getInfoAndNext().getNickName());
         }
         secondSocialPerson.setModel(secondSocialBoxModel);
@@ -96,5 +97,6 @@ public class PersonsDialog extends JDialog {
         secondSocialPerson.revalidate();
         secondSocialPerson.repaint();
     }
+
 
 }

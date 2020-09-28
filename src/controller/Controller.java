@@ -144,6 +144,7 @@ public class Controller implements ActionListener {
 		}
 
 		mainView.resetGraph(vertexToShow);
+		mainView.refreshValues(social, this);
 		mainView.repaintGraphic();
 	}
 

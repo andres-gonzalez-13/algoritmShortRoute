@@ -66,6 +66,8 @@ public class SocialPanel extends JPanel {
     }
 
     public void addFriend(Social social, ActionListener actionListener) {
+        this.refreshValues(social, actionListener);
+
         this.personsDialog.getSocialPerson().addActionListener(actionListener);
         this.personsDialog.getSocialPerson().setActionCommand(MainActivity.SHOW_PERSONS.toString());
 
@@ -77,6 +79,8 @@ public class SocialPanel extends JPanel {
     }
 
     public void deleteFriend(Social social, ActionListener actionListener) {
+        this.refreshValues(social, actionListener);
+
         this.personsDialog.getSocialPerson().addActionListener(actionListener);
         this.personsDialog.getSocialPerson().setActionCommand(MainActivity.DELETE_PERSON.toString());
 
@@ -92,6 +96,7 @@ public class SocialPanel extends JPanel {
     }
 
     public void leaveTheSocialNetwork(Social social, ActionListener actionListener) {
+        this.leaveAndCommonDialog = new LeaveAndCommonDialog(social, actionListener);
         this.leaveAndCommonDialog.setVisible(true);
     }
 
@@ -99,6 +104,7 @@ public class SocialPanel extends JPanel {
     public int leaveNetworkFinally() {
         return this.leaveAndCommonDialog.getIdPerson();
     }
+
 
     public void showPersons(Social social, ActionListener actionListener) {
         personsDialog.showPersons(social,actionListener);
@@ -118,5 +124,9 @@ public class SocialPanel extends JPanel {
         this.graphPanel.getPanelDraw().setVgrafos(vertexToShow);
         this.revalidate();
         this.repaint();
+    }
+
+    public void refreshValues(Social social, ActionListener actionListener) {
+        this.personsDialog = new PersonsDialog(social, actionListener);
     }
 }
