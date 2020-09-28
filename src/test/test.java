@@ -34,12 +34,12 @@ public class test {
 		};		
 		
 		Graph graph = new Graph(comparator);
-		graph.add(new Vertex(personSocial));
-		graph.add(new Vertex(personSocial1));
-		graph.add(new Vertex(personSocial2));
-		graph.add(new Vertex(personSocial3));
-		graph.add(new Vertex(personSocial4));
-		graph.add(new Vertex(personSocial5));
+		graph.add(new Vertex(personSocial, comparator));
+		graph.add(new Vertex(personSocial1,comparator));
+		graph.add(new Vertex(personSocial2, comparator));
+		graph.add(new Vertex(personSocial3, comparator));
+		graph.add(new Vertex(personSocial4, comparator));
+		graph.add(new Vertex(personSocial5, comparator));
 		
 		graph.show();
                 graph.setComparator(comparator);
@@ -47,10 +47,10 @@ public class test {
 		//Aqui se agregan amigos teniendo en cuenta el id de amigo
 		Boolean isInsert = graph.addConn(6, 2);
                 //esta conexion da nullpointer
-		//Boolean isInsert2 = graph.addConn(1, 3);
+		Boolean isInsert2 = graph.addConn(1, 3);
 		Boolean isInsert3 = graph.addConn(3, 5);
                 Boolean isInsert4 = graph.addConn(4, 5);
-                Boolean isInsert5 = graph.addConn(5, 5);
+                
                 //este da bug no de porque
 //                Boolean isInsert6 = graph.addConn(6, 5);
 		System.out.println("inserto?: " + isInsert4);
@@ -59,20 +59,15 @@ public class test {
 //		System.out.println("vertex: " + search.getPersonSocial().getNickName());
 		Cursor<Vertex> cursor = new Cursor<Vertex>(search);
                 
-                Vector<Vertex> vertexToShow = new Vector();
-//		while (!cursor.isOut()) {
-//                    Vertex vertexToAdd = cursor.getInfoAndNext();
-//                    vertexToAdd.setComparator(comparator);
-//                    ver.add(vertexToAdd);
-//		}
                 
-                NodeList<Vertex> aux = graph.getHead();
-                while (aux.getNext() != null) {
-                    aux.getInfo().setComparator(comparator);
-                    vertexToShow.add(aux.getInfo());
-                    
-                    aux = aux.getNext();
+                Vector<Vertex> vertexToShow = new Vector();
+                
+                
+                Cursor<Vertex> cursor2 = new Cursor<Vertex>(graph);
+                    while (!cursor2.isOut()) {
+                    vertexToShow.add(cursor2.getInfoAndNext());
                 }
+                
                 
                 JFrame frame = new JFrame();
                     frame.setSize(new Dimension(400, 400));

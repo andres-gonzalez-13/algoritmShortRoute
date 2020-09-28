@@ -17,10 +17,10 @@ import javax.swing.JPanel;
  */
 public class PanelDraw extends JPanel{
 
-    int x=150;
-    int y=150;
-    int ancho=30;
-    int alto=30;
+    int x = 200;
+    int y = 200;
+    int ancho = 30;
+    int alto = 30;
     public Vector<Integer> xvs;
     public Vector<Integer> yvs;
     public Vector<Vertex> vgrafos;
