@@ -1,48 +1,100 @@
 package views;
 
+import controller.MainActivity;
 import dataestructure.Cursor;
 import dataestructure.Vertex;
+import models.PersonSocial;
 import models.Social;
+import rojeru_san.RSButtonRiple;
+import utils.Constants;
 
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.*;
 
 public class PersonsDialog extends JDialog {
 
     private Cursor<Vertex> socialCursor;
-    private DefaultComboBoxModel dml;
+    private Cursor<Vertex> socialCursorDeleted;
+    private Cursor<PersonSocial> personSocialCursor;
 
-    private JComboBox<String> firstPerson;
-   private JComboBox<String> secondPerson;
+    private DefaultComboBoxModel socialBoxModel;
+    private DefaultComboBoxModel secondSocialBoxModel;
+    private JComboBox<Social> socialPerson;
+    private JComboBox<Social> secondSocialPerson;
+    private RSButtonRiple acceptAction;
+
+    public JComboBox<Social> getSocialPerson() {
+        return socialPerson;
+    }
+
+    public RSButtonRiple getAcceptAction() {
+        return acceptAction;
+    }
+
+    public PersonsDialog(Social social, ActionListener actionListener) {
+        this.personsDialogFeatures();
+        this.socialBoxModel = new DefaultComboBoxModel();
+        this.secondSocialBoxModel = new DefaultComboBoxModel();
+        this.socialPerson = new JComboBox();
+        this.secondSocialPerson = new JComboBox();
+        acceptAction = new RSButtonRiple();
+        this.socialCursor = new Cursor<>(social);
+
+        while (!socialCursor.isOut()) {
+            socialBoxModel.addElement(socialCursor.info().getPersonSocial().getId() + ", " + socialCursor.getInfoAndNext().getPersonSocial().getNickName());
+        }
+
+        this.socialPerson.setModel(socialBoxModel);
 
 
-   public PersonsDialog(Social social){
-       this.personsDialogFeatures();
+        this.add(socialPerson);
+        this.add(secondSocialPerson);
+        this.add(acceptAction);
 
-       this.dml = new DefaultComboBoxModel();
-       this.socialCursor = new Cursor<>(social);
-
-       while (!socialCursor.isOut()) {
-           dml.addElement(socialCursor.getInfoAndNext().getPersonSocial().getNickName());
-       }
-
-
-
-        this.firstPerson = new JComboBox<>();
-        this.secondPerson = new JComboBox<>();
-
-        this.firstPerson.setModel(dml);
-
-        this.add(this.firstPerson);
-
-        this.setVisible(true);
     }
 
     private void personsDialogFeatures() {
-        this.setSize(new Dimension(720, 480));
+        this.setResizable(false);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        this.setTitle("Topicos Avanzados de Programación");
         this.setLayout(new GridLayout(5, 1));
-        this.setBackground(Color.decode("#2c3e50"));
+        this.setSize(720, 480);
+        this.setModal(true);
+        this.setLocationRelativeTo(null); //JUSTO DESPUES DE MI "setSize()"
     }
 
+
+    public void showPersons(Social social, ActionListener actionListener) {
+        System.out.println("PERSONA SELECCIONADA: " + socialPerson.getSelectedItem());
+        personSocialCursor = new Cursor<>(social.notFriendsAtPerson(Integer.parseInt(socialPerson.getSelectedItem().toString().split(",")[0])));
+
+        secondSocialBoxModel = new DefaultComboBoxModel();
+        while (!personSocialCursor.isOut()) {
+            secondSocialBoxModel.addElement(personSocialCursor.info().getId() + ", " + personSocialCursor.getInfoAndNext().getNickName());
+        }
+        secondSocialPerson.setModel(secondSocialBoxModel);
+        secondSocialPerson.revalidate();
+        secondSocialPerson.repaint();
+    }
+
+    public int[] addFriendFinally() {
+        int valuesId[] = {Integer.parseInt(socialPerson.getSelectedItem().toString().split(",")[0]), Integer.parseInt(secondSocialPerson.getSelectedItem().toString().split(",")[0])};
+        return valuesId;
+    }
+
+    public void showPersonsDeleted(Social social, ActionListener actionListener) {
+        System.out.println("PERSONA SELECCIONADA: " + socialPerson.getSelectedItem());
+        socialCursorDeleted = new Cursor<>(social.getFriends(Integer.parseInt(socialPerson.getSelectedItem().toString().split(",")[0])));
+
+        secondSocialBoxModel = new DefaultComboBoxModel();
+
+        while (!socialCursorDeleted.isOut()) {
+            secondSocialBoxModel.addElement(socialCursorDeleted.info().getPersonSocial().getId() + ", " + socialCursorDeleted.getInfoAndNext().getPersonSocial().getNickName());
+        }
+        secondSocialPerson.setModel(secondSocialBoxModel);
+        secondSocialPerson.revalidate();
+        secondSocialPerson.repaint();
+    }
 
 }

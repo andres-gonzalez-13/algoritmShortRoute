@@ -145,7 +145,31 @@ public class Social extends Graph{
 		return isDelete;
 	}
 
-	
+    public SimpleList<PersonSocial> notFriendsAtPerson(int idPerson){
+        SimpleList<PersonSocial> notFriends = new SimpleList<PersonSocial>();
+        Vertex idPersonVertex = this.search(getComparator(), new Vertex(new PersonSocial(idPerson, "")));
+        Cursor<Vertex> cursor = new Cursor<Vertex>(this);
+        while (!cursor.isOut()) {
+            if(cursor.info().getPersonSocial().getId() != idPerson && !idPersonVertex.isExist(cursor.info())) {
+                notFriends.add(cursor.info().getPersonSocial());
+            }
+            cursor.next();
+        }
+
+        return notFriends;
+    }
+
+	public SimpleList<Vertex> getFriends(int idPerson){
+		Cursor<Vertex> cursor = new Cursor<Vertex>(this);
+		while (!cursor.isOut()) {
+			if (cursor.info().getPersonSocial().getId() == idPerson) {
+				return cursor.info();
+			}
+			cursor.next();
+		}
+		return null;
+	}
+
 }
 
 

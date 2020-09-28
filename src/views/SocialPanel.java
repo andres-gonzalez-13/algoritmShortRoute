@@ -15,12 +15,13 @@ public class SocialPanel extends JPanel {
 
     private JPanel leftPanel;
     private GraphPanel graphPanel;
+    private PersonsDialog personsDialog;
+    private LeaveAndCommonDialog leaveAndCommonDialog;
 
-
-    public SocialPanel(ActionListener actionListener, Vector<Vertex> vertexToShow) {
+    public SocialPanel(ActionListener actionListener, Vector<Vertex> vertexToShow, Social social) {
         this.socialPanelInstances(actionListener, vertexToShow);
         this.socialPanelFeatures();
-        this.socialPanelInternalContent();
+        this.socialPanelInternalContent(social, actionListener);
     }
 
     private void socialPanelFeatures(){
@@ -28,9 +29,11 @@ public class SocialPanel extends JPanel {
         this.setLayout(new BorderLayout());
     }
 
-    private void socialPanelInternalContent(){
+    private void socialPanelInternalContent(Social social, ActionListener actionListener){
         this.add(leftPanel, BorderLayout.LINE_START);
         this.add(this.graphPanel, BorderLayout.CENTER);
+        this.personsDialog = new PersonsDialog(social, actionListener);
+        this.leaveAndCommonDialog = new LeaveAndCommonDialog(social, actionListener);
     }
 
     private void socialPanelInstances(ActionListener actionListener, Vector<Vertex> vertexToShow) {
@@ -57,22 +60,63 @@ public class SocialPanel extends JPanel {
         return leftPanel;
     }
 
-    public void addFriend(Social social) {
-        new PersonsDialog(social);
-
+    public void repaintGraphic() {
+        this.repaint();
+        this.graphPanel.repaint();
     }
 
-    public void deleteFriend(Social social) {
-        System.out.println("ENTRO FRIEND");
+    public void addFriend(Social social, ActionListener actionListener) {
+        this.personsDialog.getSocialPerson().addActionListener(actionListener);
+        this.personsDialog.getSocialPerson().setActionCommand(MainActivity.SHOW_PERSONS.toString());
+
+        this.personsDialog.getAcceptAction().addActionListener(actionListener);
+        this.personsDialog.getAcceptAction().setActionCommand(MainActivity.ADD_FRIEND_FINALLY.toString());
+
+        this.personsDialog.showPersons(social, actionListener);
+        this.personsDialog.setVisible(true);
     }
 
-    public void mutualFriends(Social social) {
+    public void deleteFriend(Social social, ActionListener actionListener) {
+        this.personsDialog.getSocialPerson().addActionListener(actionListener);
+        this.personsDialog.getSocialPerson().setActionCommand(MainActivity.DELETE_PERSON.toString());
+
+        this.personsDialog.getAcceptAction().addActionListener(actionListener);
+        this.personsDialog.getAcceptAction().setActionCommand(MainActivity.DELETE_FRIEND_FINALLY.toString());
+
+        this.personsDialog.showPersonsDeleted(social, actionListener);
+        this.personsDialog.setVisible(true);
+    }
+
+    public void mutualFriends(Social social, ActionListener actionListener) {
         System.out.println("ENTRO MUTUEL");
     }
 
-    public void leaveTheSocialNetwork(Social social) {
-        System.out.println("ENTRO LEAVE");
+    public void leaveTheSocialNetwork(Social social, ActionListener actionListener) {
+        this.leaveAndCommonDialog.setVisible(true);
     }
 
 
+    public int leaveNetworkFinally() {
+        return this.leaveAndCommonDialog.getIdPerson();
+    }
+
+    public void showPersons(Social social, ActionListener actionListener) {
+        personsDialog.showPersons(social,actionListener);
+    }
+
+    public void showPersonsDeleted(Social social, ActionListener actionListener) {
+        personsDialog.showPersonsDeleted(social,actionListener);
+    }
+
+    public int[] addFrienFinally() {
+        return personsDialog.addFriendFinally();
+    }
+
+
+    public void resetGraph(Vector<Vertex> vertexToShow) {
+        this.graphPanel.setOpaque(false);
+        this.graphPanel.getPanelDraw().setVgrafos(vertexToShow);
+        this.revalidate();
+        this.repaint();
+    }
 }

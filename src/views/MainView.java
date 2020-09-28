@@ -1,5 +1,6 @@
 package views;
 
+import controller.Controller;
 import dataestructure.Vertex;
 import models.Social;
 
@@ -7,18 +8,16 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.util.Vector;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.table.DefaultTableModel;
 
 public class MainView extends JFrame {
 
 	private static final long serialVersionUID = 6313156717813295316L;
 	private MainPanel mainPanel;
 
-	public MainView(ActionListener actionListener, Vector<Vertex> vertexToShow) {
+	public MainView(ActionListener actionListener, Vector<Vertex> vertexToShow, Social social) {
 		this.mainViewFeatures();
-		this.mainViewInstances(actionListener, vertexToShow);
+		this.mainViewInstances(actionListener, vertexToShow, social);
 		this.mainViewInternalContent();
 		this.setVisible(true);
 	}
@@ -32,28 +31,28 @@ public class MainView extends JFrame {
 		//this.setIconImage(new ImageIcon(getClass().getResource("/images/calculadora.png")).getImage());
 	}
 
-	private void mainViewInstances(ActionListener actionListener, Vector<Vertex> vertexToShow) {
-		this.mainPanel = new MainPanel(actionListener, vertexToShow);
+	private void mainViewInstances(ActionListener actionListener, Vector<Vertex> vertexToShow, Social social) {
+		this.mainPanel = new MainPanel(actionListener, vertexToShow, social);
 	}
 
 	public void acceptPersons(){
 		this.mainPanel.acceptPersons();
 	}
 
-	public void addFriend(Social social) {
-		this.mainPanel.addFriend(social);
+	public void addFriend(Social social, ActionListener actionListener) {
+		this.mainPanel.addFriend(social, actionListener);
 	}
 
-	public void deleteFriend(Social social) {
-		this.mainPanel.deleteFriend(social);
+	public void deleteFriend(Social social, ActionListener actionListener) {
+		this.mainPanel.deleteFriend(social, actionListener);
 	}
 
-	public void mutualFriends(Social social) {
-		this.mainPanel.mutualFriends(social);
+	public void mutualFriends(Social social, ActionListener actionListener) {
+		this.mainPanel.mutualFriends(social, actionListener);
 	}
 
-	public void leaveTheSocialNetwork(Social social) {
-		this.mainPanel.leaveTheSocialNetwork(social);
+	public void leaveTheSocialNetwork(Social social, ActionListener actionListener) {
+		this.mainPanel.leaveTheSocialNetwork(social, actionListener);
 	}
 
 
@@ -61,4 +60,29 @@ public class MainView extends JFrame {
 		this.add(mainPanel, BorderLayout.CENTER);
 	}
 
+	public void showPersons(Social social, ActionListener actionListener) {
+		this.mainPanel.showPersons(social, actionListener);
+	}
+
+	public int[] addFriendFinally() {
+		return this.mainPanel.addFrienFinally();
+	}
+
+	public void repaintGraphic() {
+		this.mainPanel.repaintGraphic();
+	}
+
+
+	public void showPersonsDeleted(Social social, ActionListener actionListener) {
+		this.mainPanel.showPersonsDeleted(social, actionListener);
+	}
+
+	public int leaveNetworkFinally() {
+		return  this.mainPanel.leaveNetworkFinally();
+	}
+
+
+	public void resetGraph(Vector<Vertex> vertexToShow) {
+		this.mainPanel.resetGraph(vertexToShow);
+	}
 }

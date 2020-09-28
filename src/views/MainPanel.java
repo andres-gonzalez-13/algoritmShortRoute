@@ -25,9 +25,9 @@ public class MainPanel extends JPanel {
 	private SocialPanel socialPanel;
 
 
-	public MainPanel(ActionListener actionListener, Vector<Vertex> vertexToShow) {
+	public MainPanel(ActionListener actionListener, Vector<Vertex> vertexToShow, Social social) {
 		this.mainPanelFeatures();
-		this.mainPanelInstances(actionListener, vertexToShow);
+		this.mainPanelInstances(actionListener, vertexToShow, social);
 		this.mainPanelInternalContent();
 	}
 
@@ -36,7 +36,7 @@ public class MainPanel extends JPanel {
 		this.setLayout(new BorderLayout());
 	}
 
-	private void mainPanelInstances(ActionListener actionListener, Vector<Vertex> vertexToShow) {
+	private void mainPanelInstances(ActionListener actionListener, Vector<Vertex> vertexToShow, Social social) {
 		this.backGroundImage();
 		this.numberPersonsTextFull = this.numberPersonsTextFull();
 		this.acceptPersonsBTN = this.acceptPersonsBTN(actionListener);
@@ -44,7 +44,7 @@ public class MainPanel extends JPanel {
 		this.personPanel = this.personPanel();
 		this.informationPanel = new InformationPanel();
 		this.startPanel = this.startPanelFeatures();
-		this.socialPanel = new SocialPanel(actionListener, vertexToShow);
+		this.socialPanel = new SocialPanel(actionListener, vertexToShow, social);
 	}
 
 	private void mainPanelInternalContent() {
@@ -105,20 +105,20 @@ public class MainPanel extends JPanel {
 		this.repaint();
 	}
 
-	public void addFriend(Social social) {
-		socialPanel.addFriend(social);
+	public void addFriend(Social social, ActionListener actionListener) {
+		socialPanel.addFriend(social, actionListener);
 	}
 
-	public void deleteFriend(Social social) {
-		socialPanel.deleteFriend(social);
+	public void deleteFriend(Social social, ActionListener actionListener) {
+		socialPanel.deleteFriend(social, actionListener);
 	}
 
-	public void mutualFriends(Social social) {
-		socialPanel.mutualFriends(social);
+	public void mutualFriends(Social social, ActionListener actionListener) {
+		socialPanel.mutualFriends(social, actionListener);
 	}
 
-	public void leaveTheSocialNetwork(Social social) {
-		socialPanel.leaveTheSocialNetwork(social);
+	public void leaveTheSocialNetwork(Social social, ActionListener actionListener) {
+		socialPanel.leaveTheSocialNetwork(social, actionListener);
 	}
 
 
@@ -128,4 +128,28 @@ public class MainPanel extends JPanel {
 		graphics.drawImage(resizeImage, 0, 0, this);
 	}
 
+	public void showPersons(Social social, ActionListener actionListener) {
+		socialPanel.showPersons(social, actionListener);
+	}
+
+	public int[] addFrienFinally() {
+		return  socialPanel.addFrienFinally();
+	}
+
+	public void repaintGraphic() {
+		this.socialPanel.repaintGraphic();
+	}
+
+	public void showPersonsDeleted(Social social, ActionListener actionListener) {
+		socialPanel.showPersonsDeleted(social, actionListener);
+	}
+
+	public int leaveNetworkFinally() {
+		return  socialPanel.leaveNetworkFinally();
+	}
+
+
+	public void resetGraph(Vector<Vertex> vertexToShow) {
+		socialPanel.resetGraph(vertexToShow);
+	}
 }
