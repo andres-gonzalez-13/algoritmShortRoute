@@ -43,7 +43,7 @@ public class LeaveAndCommonDialog extends JDialog {
         this.setResizable(false);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setLayout(new GridLayout(5, 1));
-        this.setSize(720, 480);
+        this.setSize(620, 380);
         this.setModal(true);
         this.setLocationRelativeTo(null); //JUSTO DESPUES DE MI "setSize()"
     }

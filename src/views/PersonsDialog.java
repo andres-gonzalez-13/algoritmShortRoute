@@ -39,7 +39,9 @@ public class PersonsDialog extends JDialog {
         this.socialBoxModel = new DefaultComboBoxModel();
         this.secondSocialBoxModel = new DefaultComboBoxModel();
         this.socialPerson = new JComboBox();
+        this.socialPerson.setFont(Constants.bold_italic);
         this.secondSocialPerson = new JComboBox();
+        this.secondSocialPerson.setFont(Constants.bold_italic);
         acceptAction = new RSButtonRiple();
         this.socialCursor = new Cursor<>(social);
 
@@ -48,7 +50,6 @@ public class PersonsDialog extends JDialog {
         }
 
         this.socialPerson.setModel(socialBoxModel);
-
 
         this.add(socialPerson);
         this.add(secondSocialPerson);
@@ -60,8 +61,8 @@ public class PersonsDialog extends JDialog {
         this.setResizable(false);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setTitle("Topicos Avanzados de Programación");
-        this.setLayout(new GridLayout(5, 1));
-        this.setSize(720, 480);
+        this.setLayout(new GridLayout(3, 1, 8,8));
+        this.setSize(620, 380);
         this.setModal(true);
         this.setLocationRelativeTo(null); //JUSTO DESPUES DE MI "setSize()"
     }
