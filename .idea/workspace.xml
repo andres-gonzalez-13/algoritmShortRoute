@@ -2,7 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/views/InformationPanel.java" line="16" />
-    <bookmark url="file://$PROJECT_DIR$/src/views/SocialPanel.java" line="100" />
+    <bookmark url="file://$PROJECT_DIR$/src/views/SocialPanel.java" line="105" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a75ee902-a196-46f8-93f1-246aa1e34d4c" name="Default Changelist" comment="">
@@ -27,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/MainPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
+            <state relative-caret-position="713">
               <caret line="156" column="56" selection-start-line="156" selection-start-column="56" selection-end-line="156" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="146" column="43" selection-start-line="146" selection-start-column="43" selection-end-line="146" selection-end-column="43" />
+            <state relative-caret-position="101">
+              <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/SocialPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="123" column="74" selection-start-line="123" selection-start-column="74" selection-end-line="123" selection-end-column="74" />
+            <state relative-caret-position="322">
+              <caret line="98" column="85" selection-start-line="98" selection-start-column="85" selection-end-line="98" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4006#4007#0" expanded="true" />
@@ -158,10 +158,10 @@
         <option value="$PROJECT_DIR$/src/views/LeaveAndComoonDialog.java" />
         <option value="$PROJECT_DIR$/src/views/LeaveAndCommonDialog.java" />
         <option value="$PROJECT_DIR$/src/views/PersonsDialog.java" />
-        <option value="$PROJECT_DIR$/src/controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/views/MainView.java" />
-        <option value="$PROJECT_DIR$/src/views/SocialPanel.java" />
         <option value="$PROJECT_DIR$/src/views/MainPanel.java" />
+        <option value="$PROJECT_DIR$/src/views/SocialPanel.java" />
+        <option value="$PROJECT_DIR$/src/controller/Controller.java" />
       </list>
     </option>
   </component>
@@ -304,12 +304,12 @@
       <option name="presentableId" value="Default" />
       <updated>1601223599532</updated>
       <workItem from="1601223601112" duration="39725000" />
-      <workItem from="1601305493889" duration="820000" />
+      <workItem from="1601305493889" duration="1197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40545000" />
+    <option name="totallyTimeSpent" value="40922000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -322,7 +322,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -333,12 +332,12 @@
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49933863" weight="0.22535211" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" sideWeight="0.49933863" visible="true" weight="0.22535211" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5006614" side_tool="true" weight="0.22738694" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.49933863" visible="true" weight="0.24918744" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49933863" weight="0.24918744" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.3982412" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3261105" />
@@ -547,16 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="146" column="43" selection-start-line="146" selection-start-column="43" selection-end-line="146" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="509">
@@ -572,8 +561,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/SocialPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="123" column="74" selection-start-line="123" selection-start-column="74" selection-end-line="123" selection-end-column="74" />
+        <state relative-caret-position="322">
+          <caret line="98" column="85" selection-start-line="98" selection-start-column="85" selection-end-line="98" selection-end-column="85" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4006#4007#0" expanded="true" />
@@ -584,7 +573,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/MainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
+        <state relative-caret-position="713">
           <caret line="156" column="56" selection-start-line="156" selection-start-column="56" selection-end-line="156" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -594,6 +583,16 @@
             <element signature="e#4738#4739#0" expanded="true" />
             <element signature="e#4917#4918#0" expanded="true" />
             <element signature="e#4965#4966#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
