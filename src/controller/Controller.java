@@ -74,22 +74,22 @@ public class Controller implements ActionListener {
 	}
 
 	private void addFriend() {
-		mainView.addFriend();
+		mainView.addFriend(this.social);
 
 	}
 
 	private void deleteFriend() {
-		mainView.deleteFriend();
+		mainView.deleteFriend(this.social);
 
 	}
 
 	private void mutualFriends() {
-		mainView.mutualFriends();
+		mainView.mutualFriends(this.social);
 
 	}
 
 	private void leaveTheSocialNetwork() {
-		mainView.leaveTheSocialNetwork();
+		mainView.leaveTheSocialNetwork(this.social);
 	}
 
 }

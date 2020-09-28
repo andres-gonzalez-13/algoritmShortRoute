@@ -7,6 +7,7 @@ import javax.swing.*;
 
 import controller.MainActivity;
 import dataestructure.Vertex;
+import models.Social;
 import rojeru_san.RSButtonRiple;
 import rojeru_san.RSMTextFull;
 import utils.Constants;
@@ -104,20 +105,20 @@ public class MainPanel extends JPanel {
 		this.repaint();
 	}
 
-	public void addFriend() {
-		socialPanel.addFriend();
+	public void addFriend(Social social) {
+		socialPanel.addFriend(social);
 	}
 
-	public void deleteFriend() {
-		socialPanel.deleteFriend();
+	public void deleteFriend(Social social) {
+		socialPanel.deleteFriend(social);
 	}
 
-	public void mutualFriends() {
-		socialPanel.mutualFriends();
+	public void mutualFriends(Social social) {
+		socialPanel.mutualFriends(social);
 	}
 
-	public void leaveTheSocialNetwork() {
-		socialPanel.leaveTheSocialNetwork();
+	public void leaveTheSocialNetwork(Social social) {
+		socialPanel.leaveTheSocialNetwork(social);
 	}
 
 

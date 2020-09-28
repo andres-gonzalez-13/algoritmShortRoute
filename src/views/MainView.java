@@ -1,6 +1,7 @@
 package views;
 
 import dataestructure.Vertex;
+import models.Social;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -39,20 +40,20 @@ public class MainView extends JFrame {
 		this.mainPanel.acceptPersons();
 	}
 
-	public void addFriend() {
-		this.mainPanel.addFriend();
+	public void addFriend(Social social) {
+		this.mainPanel.addFriend(social);
 	}
 
-	public void deleteFriend() {
-		this.mainPanel.deleteFriend();
+	public void deleteFriend(Social social) {
+		this.mainPanel.deleteFriend(social);
 	}
 
-	public void mutualFriends() {
-		this.mainPanel.mutualFriends();
+	public void mutualFriends(Social social) {
+		this.mainPanel.mutualFriends(social);
 	}
 
-	public void leaveTheSocialNetwork() {
-		this.mainPanel.leaveTheSocialNetwork();
+	public void leaveTheSocialNetwork(Social social) {
+		this.mainPanel.leaveTheSocialNetwork(social);
 	}
 
 

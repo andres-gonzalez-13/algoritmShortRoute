@@ -2,6 +2,7 @@ package views;
 
 import controller.MainActivity;
 import dataestructure.Vertex;
+import models.Social;
 import rojeru_san.RSButtonRiple;
 import utils.Constants;
 
@@ -56,19 +57,20 @@ public class SocialPanel extends JPanel {
         return leftPanel;
     }
 
-    public void addFriend() {
-        System.out.println("ENTRO ADD");
+    public void addFriend(Social social) {
+        new PersonsDialog(social);
+
     }
 
-    public void deleteFriend() {
+    public void deleteFriend(Social social) {
         System.out.println("ENTRO FRIEND");
     }
 
-    public void mutualFriends() {
+    public void mutualFriends(Social social) {
         System.out.println("ENTRO MUTUEL");
     }
 
-    public void leaveTheSocialNetwork() {
+    public void leaveTheSocialNetwork(Social social) {
         System.out.println("ENTRO LEAVE");
     }
 
