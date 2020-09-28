@@ -168,10 +168,9 @@ public class SocialPanel extends JPanel {
     }
 
     public int[] addFrienFinally(Social social) {
-        this.personsDialog.dispose();
-
-        this.relationsShips.setText("<html> <p align='center' >" + "¡La persona mas popular<br/>" + "es: "+ social.getMaxFriends().getNickName() + "!</html>");
-        return personsDialog.addFriendFinally();
+            this.personsDialog.dispose();
+            this.relationsShips.setText("<html> <p align='center' >" + "¡La persona mas popular<br/>" + "es: "+ social.getMaxFriends().getNickName() + "!</html>");
+            return personsDialog.addFriendFinally();
     }
 
     public int[] commonFrindValues() {

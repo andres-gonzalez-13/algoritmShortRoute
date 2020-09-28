@@ -49,7 +49,6 @@ public class PersonsDialog extends JDialog {
 
         this.socialPerson.setModel(socialBoxModel);
 
-
         socialPerson.setFont(Constants.fontBtn(20));
         secondSocialPerson.setFont(Constants.fontBtn(20));
         acceptAction.setFont(Constants.fontBtn(20));
@@ -58,14 +57,14 @@ public class PersonsDialog extends JDialog {
         this.add(Constants.insidePanel(secondSocialPerson, 15,70,15,70,"#FFFF",false));
         this.add(Constants.insidePanel(acceptAction, 15,70,15,70,"#FFFF",false));
 
+
     }
 
     private void personsDialogFeatures() {
         this.setResizable(false);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.setTitle("Topicos Avanzados de Programación");
-        this.setLayout(new GridLayout(5, 1));
-        this.setSize(720, 480);
+        this.setLayout(new GridLayout(4, 1));
+        this.setSize(620, 380);
         this.setModal(true);
         this.setLocationRelativeTo(null); //JUSTO DESPUES DE MI "setSize()"
     }
