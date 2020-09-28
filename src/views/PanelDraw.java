@@ -47,8 +47,8 @@ public class PanelDraw extends JPanel{
             g.setColor(Color.WHITE);
             g.fillRect(0, 0, getWidth(), getHeight());
             g.setColor(Color.BLACK);
-            int radio = 100;
-            float angulo = 360/10;
+            int radio = 200;
+            float angulo = 360/vgrafos.size();
             angulo = (float) Math.toRadians(angulo);
             for(int i = indice;i < vgrafos.size();i++){
                 int xv = (int)(x + radio*Math.cos(i * angulo));

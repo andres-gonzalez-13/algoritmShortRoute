@@ -31,7 +31,7 @@ public class Controller implements ActionListener {
 
 	public Controller() {
 		this.mainView = new MainView(this);
-		social = new Social(comparator, 20);
+		social = new Social(comparator, 7);
 		social.show();
 		social.addConn(1, 4);
 		social.addConn(1, 2);
